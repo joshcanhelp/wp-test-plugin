@@ -1,0 +1,24 @@
+{
+  "name": "joshcanhelp/wp-test-plugin",
+  "require-dev": {
+    "joshcanhelp/wp-unit-test-helpers": "*",
+    "phpunit/phpunit": "^7.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "*",
+    "wp-coding-standards/wpcs": "*",
+    "phpcompatibility/phpcompatibility-wp": "*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Josh Cunningham",
+      "email": "josh@joshcanhelp.com"
+    }
+  ],
+  "scripts": {
+    "phpcs": "\"vendor/bin/phpcs\"",
+    "phpcbf": "\"vendor/bin/phpcbf\"",
+    "sniffs": "\"vendor/bin/phpcs\" -e",
+    "test": "\"vendor/bin/phpunit\""
+  },
+  "minimum-stability": "stable"
+}
