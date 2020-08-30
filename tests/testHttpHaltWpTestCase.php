@@ -8,10 +8,10 @@ class TestHttpHaltWpTestCase extends WpTestCase {
 		$this->startHttpHalting();
 		update_option( 'user_profile_api_access_token', '__test_api_token__' );
 
-		$test_user = (object) array( 'data' => (object) array( 'user_email' => '__test_email__' ) );
+		$test_user = (object) [ 'data' => (object) [ 'user_email' => '__test_email__' ] ];
 		try {
 			prefixed_get_user_profile_data_on_login( uniqid(), $test_user );
-			$e_data = array();
+			$e_data = [];
 		} catch ( HttpHaltException $e ) {
 			$e_data = $e->getHttpRequest();
 		}

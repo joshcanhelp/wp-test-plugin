@@ -23,7 +23,7 @@ function prefixed_get_user_profile_data_on_login( $user_login, $user ) {
 	$api_token   = get_option( 'user_profile_api_access_token' );
 	$response    = wp_remote_get(
 		'https://api.joshcanhelp.com/user?email=' . $email_param,
-		array( 'headers' => array( 'Authorization' => 'Bearer ' . $api_token ) )
+		[ 'headers' => [ 'Authorization' => 'Bearer ' . $api_token ] ]
 	);
 
 	$response_code = (int) wp_remote_retrieve_response_code( $response );
@@ -80,11 +80,11 @@ function prefixed_ajax_admin_delete_custom_profile_data() {
 	check_ajax_referer( 'delete_custom_profile_data' );
 
 	if ( ! current_user_can( 'edit_users' ) ) {
-		wp_send_json_error( array( 'error' => __( 'Not authorized', 'prefixed' ) ) );
+		wp_send_json_error( [ 'error' => __( 'Not authorized', 'prefixed' ) ] );
 	}
 
 	if ( empty( $_POST['user_id'] ) ) {
-		wp_send_json_error( array( 'error' => __( 'No user ID', 'prefixed' ) ) );
+		wp_send_json_error( [ 'error' => __( 'No user ID', 'prefixed' ) ] );
 	}
 
 	delete_user_meta( $_POST['user_id'], 'custom_profile_data' );
@@ -94,12 +94,12 @@ function prefixed_ajax_admin_delete_custom_profile_data() {
 add_action( 'wp_ajax_delete_custom_profile_data', 'prefixed_ajax_admin_delete_custom_profile_data' );
 
 function prefixed_admin_enqueue_scripts() {
-  wp_register_script( 'prefixed_admin', PREFIXED_PLUGIN_URL . 'assets/admin.js', [ 'jquery' ], '0.0.1' );
-  wp_localize_script(
-    'prefixed_admin',
-    'adminScriptVars',
-    [ 'a_message' => __( 'A message ...', 'lang-prefix' ) ]
-  );
+	wp_register_script( 'prefixed_admin', PREFIXED_PLUGIN_URL . 'assets/admin.js', [ 'jquery' ], '0.0.1' );
+	wp_localize_script(
+		'prefixed_admin',
+		'adminScriptVars',
+		[ 'a_message' => __( 'A message ...', 'lang-prefix' ) ]
+	);
 }
 
 add_action( 'admin_enqueue_scripts', 'prefixed_admin_enqueue_scripts', 1 );

@@ -6,10 +6,10 @@ class TestHttpHalt extends \PHPUnit\Framework\TestCase {
 		add_filter( 'pre_http_request', 'pre_http_request_halt_request', 1, 3 );
 		update_option( 'user_profile_api_access_token', '__test_api_token__' );
 
-		$test_user = (object) array( 'data' => (object) array( 'user_email' => '__test_email__' ) );
+		$test_user = (object) [ 'data' => (object) [ 'user_email' => '__test_email__' ] ];
 		try {
 			prefixed_get_user_profile_data_on_login( uniqid(), $test_user );
-			$e_data = array();
+			$e_data = [];
 		} catch ( Exception $e ) {
 			$e_data = json_decode( $e->getMessage(), true );
 		}

@@ -35,22 +35,22 @@ require dirname( dirname( __FILE__ ) ) . '/vendor/autoload.php';
 function pre_http_request_halt_request( $preempt, $args, $url ) {
 	throw new \Exception(
 		json_encode(
-			array(
+			[
 				'url'     => $url,
 				'method'  => $args['method'],
 				'headers' => $args['headers'],
 				'body'    => json_decode( $args['body'], true ),
 				'preempt' => $preempt,
-			)
+			]
 		)
 	);
 }
 
 function pre_http_request_mock_success() {
-	return array(
-		'response' => array( 'code' => 200 ),
+	return [
+		'response' => [ 'code' => 200 ],
 		'body'     => '{"location": "Seattle, WA, USA"}',
-	);
+	];
 }
 
 function pre_http_request_mock_wp_error() {
@@ -58,26 +58,26 @@ function pre_http_request_mock_wp_error() {
 }
 
 function pre_http_request_mock_not_found() {
-	return array(
-		'response' => array( 'code' => 404 ),
+	return [
+		'response' => [ 'code' => 404 ],
 		'body'     => '__test_not_found_body__',
-	);
+	];
 }
 
 function pre_http_request_mock_empty_response() {
-	return array(
-		'response' => array( 'code' => 200 ),
+	return [
+		'response' => [ 'code' => 200 ],
 		'body'     => '',
-	);
+	];
 }
 
 function wp_redirect_halt_redirect( $location, $status ) {
 	throw new \Exception(
 		json_encode(
-			array(
+			[
 				'location' => $location,
 				'status'   => $status,
-			)
+			]
 		)
 	);
 }
@@ -89,11 +89,11 @@ function wp_die_handler_filter() {
 function wp_die_halt_handler( $message, $title, $args ) {
 	throw new \Exception(
 		wp_json_encode(
-			array(
+			[
 				'message' => $message,
 				'title'   => $title,
 				'args'    => $args,
-			)
+			]
 		)
 	);
 }

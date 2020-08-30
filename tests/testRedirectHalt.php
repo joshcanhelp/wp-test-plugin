@@ -12,11 +12,11 @@ class TestRedirectHalt extends \PHPUnit\Framework\TestCase {
 
 	public function testThatAnActiveCidWillRedirectCorrectly() {
 		set_query_var( 'cid', '__test_valid_cid__' );
-		update_option( 'active_campaign_ids', array( '__test_valid_cid__' ) );
+		update_option( 'active_campaign_ids', [ '__test_valid_cid__' ] );
 
 		try {
 			prefixed_redirect_to_campaign_landing_page();
-			$e_data = array();
+			$e_data = [];
 		} catch ( Exception $e ) {
 			$e_data = json_decode( $e->getMessage(), true );
 		}
