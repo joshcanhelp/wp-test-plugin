@@ -19,9 +19,9 @@ Installing lots of stuff ...
 $ composer test
 > "vendor/bin/phpunit"
 
-......................                                            22 / 22 (100%)
+.......................                                           23 / 23 (100%)
 
-Time: 1.3 seconds, Memory: 28.00 MB
+Time: 1.02 seconds, Memory: 28.00 MB
 
-OK (22 tests, 70 assertions)
+OK (23 tests, 74 assertions)
 ```

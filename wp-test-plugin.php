@@ -8,6 +8,8 @@
  * @package joshcanhelp-wp-testing
  */
 
+define( 'PREFIXED_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
 /**
  * Get additional user profile data on do_login.
  *
@@ -90,3 +92,14 @@ function prefixed_ajax_admin_delete_custom_profile_data() {
 }
 
 add_action( 'wp_ajax_delete_custom_profile_data', 'prefixed_ajax_admin_delete_custom_profile_data' );
+
+function prefixed_admin_enqueue_scripts() {
+  wp_register_script( 'prefixed_admin', PREFIXED_PLUGIN_URL . 'assets/admin.js', [ 'jquery' ], '0.0.1' );
+  wp_localize_script(
+    'prefixed_admin',
+    'adminScriptVars',
+    [ 'a_message' => __( 'A message ...', 'lang-prefix' ) ]
+  );
+}
+
+add_action( 'admin_enqueue_scripts', 'prefixed_admin_enqueue_scripts', 1 );
