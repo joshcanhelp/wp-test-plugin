@@ -1,9 +1,9 @@
 <?php
 
-use WpUnitTestHelpers\WpTestCase;
+use WpUnitTestHelpers\WpTestCaseAbstract;
 use WpUnitTestHelpers\Exceptions\WpDieHaltException;
 
-class TestEnqueuedStyleWpTestCase extends WpTestCase {
+class TestEnqueuedStyleWpTestCase extends WpTestCaseAbstract {
 
 	public function testThatAdminScriptIsRegistered() {
 		prefixed_admin_enqueue_scripts();

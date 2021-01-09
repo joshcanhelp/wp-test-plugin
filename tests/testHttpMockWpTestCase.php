@@ -1,7 +1,7 @@
 <?php
-use WpUnitTestHelpers\WpTestCase;
+use WpUnitTestHelpers\WpTestCaseAbstract;
 
-class TestHttpMockWpTestCase extends WpTestCase {
+class TestHttpMockWpTestCase extends WpTestCaseAbstract {
 
 	public function setup() {
 		parent::setUp();
