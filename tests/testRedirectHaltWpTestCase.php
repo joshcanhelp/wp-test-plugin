@@ -1,8 +1,8 @@
 <?php
 
-use WpUnitTestHelpers\WpTestCase;
+use WpUnitTestHelpers\WpTestCaseAbstract;
 
-class TestRedirectHaltWpTestCase extends WpTestCase {
+class TestRedirectHaltWpTestCase extends WpTestCaseAbstract {
 
 	public function testThatAnActiveCidWillRedirectCorrectly() {
 		$this->startRedirectHalting();

@@ -1,8 +1,8 @@
 <?php
 
-use \WpUnitTestHelpers\WpTestCase;
+use \WpUnitTestHelpers\WpTestCaseAbstract;
 
-class TestAjaxHandlingWpTestCase extends WpTestCase {
+class TestAjaxHandlingWpTestCase extends WpTestCaseAbstract {
 
 	public function testThatInvalidNonceWillFail() {
 		$this->startAjaxHalting();

@@ -1,9 +1,9 @@
 <?php
 
-use WpUnitTestHelpers\WpTestCase;
+use WpUnitTestHelpers\WpTestCaseAbstract;
 use WpUnitTestHelpers\Exceptions\WpDieHaltException;
 
-class TestWpDieHandlingWpTestCase extends WpTestCase {
+class TestWpDieHandlingWpTestCase extends WpTestCaseAbstract {
 
 	public function tearDown() {
 		delete_option( 'login_code' );

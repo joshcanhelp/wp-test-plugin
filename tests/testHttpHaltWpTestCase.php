@@ -1,8 +1,8 @@
 <?php
-use WpUnitTestHelpers\WpTestCase;
+use WpUnitTestHelpers\WpTestCaseAbstract;
 use WpUnitTestHelpers\Exceptions\HttpHaltException;
 
-class TestHttpHaltWpTestCase extends WpTestCase {
+class TestHttpHaltWpTestCase extends WpTestCaseAbstract {
 
 	public function testThatItRequestsTheCorrectUrl() {
 		$this->startHttpHalting();

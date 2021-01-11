@@ -1,9 +1,9 @@
 <?php
 
-use WpUnitTestHelpers\WpTestCase;
+use WpUnitTestHelpers\WpTestCaseAbstract;
 use WpUnitTestHelpers\Exceptions\WpDieHaltException;
 
-class TestHookedFunctionsWpTestCase extends WpTestCase {
+class TestHookedFunctionsWpTestCase extends WpTestCaseAbstract {
 
 	public function testThatLoginInitIsHooked() {
 		$this->assertHooked(
