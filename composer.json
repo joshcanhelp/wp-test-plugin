@@ -1,13 +1,7 @@
 {
   "name": "joshcanhelp/wp-test-plugin",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/joshcanhelp/wp-unit-test-helpers"
-    }
-  ],
   "require-dev": {
-    "joshcanhelp/wp-unit-test-helpers": "dev-fix-naming",
+    "joshcanhelp/wp-unit-test-helpers": "*",
     "phpunit/phpunit": "^7.0",
     "dealerdirect/phpcodesniffer-composer-installer": "*",
     "wp-coding-standards/wpcs": "*",
