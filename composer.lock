@@ -126,28 +126,29 @@
         },
         {
             "name": "joshcanhelp/wp-unit-test-helpers",
-            "version": "v0.1.0",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/joshcanhelp/wp-unit-test-helpers.git",
-                "reference": "fc77aa7ab8063eb3013528f4bcbe0740f4c888b2"
+                "reference": "7f43f7b84155ef1a3c3688032c518028ce38b4c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/joshcanhelp/wp-unit-test-helpers/zipball/fc77aa7ab8063eb3013528f4bcbe0740f4c888b2",
-                "reference": "fc77aa7ab8063eb3013528f4bcbe0740f4c888b2",
+                "url": "https://api.github.com/repos/joshcanhelp/wp-unit-test-helpers/zipball/7f43f7b84155ef1a3c3688032c518028ce38b4c1",
+                "reference": "7f43f7b84155ef1a3c3688032c518028ce38b4c1",
                 "shasum": ""
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "*",
                 "phpcompatibility/phpcompatibility-wp": "*",
+                "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5",
                 "wp-coding-standards/wpcs": "*"
             },
             "type": "library",
             "autoload": {
-                "classmap": [
-                    "src/"
-                ]
+                "psr-4": {
+                    "WpUnitTestHelpers\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -160,7 +161,7 @@
                 }
             ],
             "description": "A set of traits to help you write unit tests for WP plugins and themes",
-            "time": "2020-07-20T01:59:24+00:00"
+            "time": "2021-01-11T22:15:15+00:00"
         },
         {
             "name": "myclabs/deep-copy",
